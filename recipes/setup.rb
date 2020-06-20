@@ -1,3 +1,5 @@
+package 'vim'
+
 package 'tree' do
   action :install
 end
@@ -11,5 +13,7 @@ package 'git' do
 end
 
 file '/etc/motd' do
-  content 'Property of Umesh Kumar'
+  content "Property of Umesh Kumar
+  HOSTNAME: #{node['hostname']}
+  "
 end
