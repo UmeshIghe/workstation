@@ -12,8 +12,7 @@ package 'git' do
  action :install
 end
 
-file '/etc/motd' do
-  content "Property of Umesh Kumar
-  HOSTNAME: #{node['hostname']}
-  "
+template '/etc/motd' do
+  source 'motd.erb'
+  action :create
 end
